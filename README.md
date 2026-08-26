@@ -1,2 +1,2 @@
 # minbpe
-Minimal implementation of the Byte Pair Encoding algorithm commonly used for LLM tokenization.
+Minimal implementation of the Byte Pair Encoding (BPE) algorithm commonly used for LLM tokenization.
