@@ -1,0 +1,30 @@
+# venv
+.venv/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# jupyter
+.ipynb_checkpoints/
+
+# pytest / ruff
+.pytest_cache/
+.ruff_cache/
+
+# os / editor
+.DS_Store
+.vscode/
+.idea/
+
+# coding agents
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+.codex/
+AGENTS.md
+AGENTS.local.md
+.cursor/
+.cursorrules
+.aider*
