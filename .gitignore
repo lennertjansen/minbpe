@@ -9,6 +9,10 @@ __pycache__/
 # jupyter
 .ipynb_checkpoints/
 
+# downloaded gpt-2 tokenizer files
+encoder.json
+vocab.bpe
+
 # pytest / ruff
 .pytest_cache/
 .ruff_cache/
