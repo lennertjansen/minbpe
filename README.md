@@ -1,10 +1,14 @@
 # minbpe
 
-**Disclaimer: this repo is strictly for my own educational purposes - understanding the byte-pair encoding (BPE) algorithm.**
+**Disclaimer: this repo is strictly for my own educational purposes and understanding of byte-pair encoding (BPE) for LLM tokenization.**
 
-My from-scratch implementation of [Karpathy's minbpe](https://github.com/karpathy/minbpe): a byte-level BPE tokenizer as used for LLMs (GPT-2 style). `BasicTokenizer` trains a merge table on raw UTF-8 bytes; no regex splitting or special tokens.
+My from-scratch implementation of [Karpathy's minbpe](https://github.com/karpathy/minbpe): a byte-level BPE tokenizer as used for LLMs (GPT-2 style). `BasicTokenizer` trains a merge table on raw UTF-8 bytes; no regex splitting or special tokens yet.
 
-Built following ["Let's build the GPT Tokenizer"](https://www.youtube.com/watch?v=zduSFxRajkE), with `tokenization.ipynb` as the scratchpad along the way.
+Built following:
+- ["Let's build the GPT Tokenizer"](https://www.youtube.com/watch?v=zduSFxRajkE), with `tokenization.ipynb` as the scratchpad along the way;
+- [Wikipedia article about BPE](https://en.wikipedia.org/wiki/Byte-pair_encoding);
+- GPT-2 [paper (section 2.2)](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) and [code](https://github.com/openai/gpt-2/blob/master/src/encoder.py);
+- [Sennrich et al. (2016). "Neural Machine Translation of Rare Words with Subword Units". ACL, §3.2](https://arxiv.org/pdf/1508.07909)
 
 ## Installation
 
@@ -33,10 +37,6 @@ Tests cover encode/decode round-trips (trained on the [Manhattan Project Wikiped
 ```bash
 uv run pytest
 ```
-
-## License
-
-MIT
 
 ## AI statement
 
