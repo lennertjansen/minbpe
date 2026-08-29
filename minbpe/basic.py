@@ -19,10 +19,6 @@ from .base import Tokenizer, get_stats, merge
 
 class BasicTokenizer(Tokenizer):
 
-    def __init__(self):
-        super().__init__()
-        self.base_vocab = 256
-
     def train(self, text: str, vocab_size: int, verbose=False):
         assert vocab_size >= self.base_vocab
         num_merges = vocab_size - self.base_vocab
@@ -33,7 +29,7 @@ class BasicTokenizer(Tokenizer):
 
         # iteratively merge most common adjacent pairs to create new tokens
         merges: dict[tuple[int, int], int] = {}
-        vocab = {idx: bytes([idx]) for idx in range(256)}
+        vocab = {idx: bytes([idx]) for idx in range(self.base_vocab)}
         for i in range(num_merges):
             
             # count number of times each consecutive pair appears
@@ -75,7 +71,7 @@ class BasicTokenizer(Tokenizer):
             stats = get_stats(ids)
             pair = min(stats, key=lambda p: self.merges.get(p, float("inf"))) 
             if pair not in self.merges:
-                    break # nothing else can be merged
+                break # nothing else can be merged
             idx = self.merges[pair]
             ids = merge(ids, pair, idx)
         return ids

@@ -50,6 +50,7 @@ class Tokenizer:
 
     def __init__(self):
         # default vocab size of 256 (all bytes), no merges or patterns
+        self.base_vocab = 256
         self.merges: dict[tuple[int, int], int] = {}
         self.pattern = ""
         self.special_tokens = {}
@@ -69,7 +70,7 @@ class Tokenizer:
 
     def _build_vocab(self):
         # vocab is deterministically derived from merges
-        vocab = {idx: bytes([idx]) for idx in range(256)}
+        vocab = {idx: bytes([idx]) for idx in range(self.base_vocab)}
 
         # iterate in order in which we inserted items into the merges dict
         for (p0, p1), idx in self.merges.items(): 
