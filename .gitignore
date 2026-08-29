@@ -32,3 +32,6 @@ AGENTS.local.md
 .cursor/
 .cursorrules
 .aider*
+
+# local stuff
+local/
